@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h6>Welcome to Rumblr!</h6>
+    <p>Here is your account information:</p>
+    <div class="account_container">
+      <div class=account-logout>
+      <div id="account_id">
+      <h4>Account</h4><br>
+      </div>
+      <div id="logout_id">
+      <form action="/logout" method="post">
+      <input id="logout" type="submit" value="Log Out">
+      </form>
+      </div>
+      </div>
+      <p id="break">  __________________________________________________________________________</p>
+      <div class="account">
+      <label><strong>Email</strong></label>
+      <p id="account_email"><%= session[:user].email %></p>
+      <p id="break">  __________________________________________________________________________</p>
+      </div>
+      <div id="account">
+      <label><strong>Password</strong></label>
+      <p id="account_password"><%= session[:user].password %></p>
+      <p id="break">  __________________________________________________________________________</p>
+      </div>
+      <div id="account">
+      <label><strong>Username</strong></label>
+      <p id="account_username"><%= session[:user].username %></p>
+      <p id="break">  __________________________________________________________________________</p>
+      </div>
+    </div>
+    <p>
+      Click here to start blogging now: <a href="http://localhost:4567/">Rumblr</a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<nav>
+  <div class="container">
+  <div id="r">
+  <li><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Letter_r.svg/1200px-Letter_r.svg.png" alt=""></li>
+  </div>
+  <div id="search">
+  <input id="nav_search" type="text" name="" placeholder="Search Rumblr">
+  </div>
+  <div id="pictures">
+    <li><a href="#"><img id="home" src="https://image.flaticon.com/icons/png/512/69/69524.png"  title="Home"></a></li>
+    <li><a href="#"><img id="explore" src="https://png.pngtree.com/svg/20170720/3fb9c5ed9d.svg" title="Explore"></a></li>
+    <li><a href="account"><img id="account" src="https://png.pngtree.com/svg/20170817/f5a6df7d9c.svg" title="Account"></a></li>
+    <li><a href="blogposts"><img id="post" src="https://cdn4.iconfinder.com/data/icons/actions-2/24/pencil-square-512.png" title="Create Post"></a></li>
+  </div>
+  </div>
+</nav>
+<section id="line"></section>
+
+<div class="account_container">
+  <div class=account-logout>
+  <div id="account_id">
+  <h4>Account</h4><br>
+  </div>
+  <div id="logout_id">
+  <form action="/logout" method="post">
+  <input id="logout" type="submit" value="Log Out">
+  </form>
+  </div>
+  </div>
+  <p id="break">  __________________________________________________________________________</p>
+  <div class="account">
+  <label><strong>Email</strong></label>
+  <p id="account_email"><%= session[:user].email %></p>
+  <p id="break">  __________________________________________________________________________</p>
+  </div>
+  <div id="account">
+  <label><strong>Password</strong></label>
+  <p id="account_password"><%= session[:user].password %></p>
+  <p id="break">  __________________________________________________________________________</p>
+  </div>
+  <div id="account">
+  <label><strong>Username</strong></label>
+  <p id="account_username"><%= session[:user].username %></p>
+  <p id="break">  __________________________________________________________________________</p>
+  </div>
+
+
+</div>

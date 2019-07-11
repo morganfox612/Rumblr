@@ -1,0 +1,65 @@
+<nav>
+  <div class="container">
+  <div id="r">
+  <li><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Letter_r.svg/1200px-Letter_r.svg.png" alt=""></li>
+  </div>
+  <div id="search">
+  <input id="nav_search" type="text" name="" placeholder="Search Rumblr">
+  </div>
+  <div id="pictures">
+    <li><a href="#"><img id="home" src="https://image.flaticon.com/icons/png/512/69/69524.png"  title="Home"></a></li>
+    <li><a href="#"><img id="explore" src="https://png.pngtree.com/svg/20170720/3fb9c5ed9d.svg" title="Explore"></a></li>
+    <li><a href="account"><img id="account" src="https://png.pngtree.com/svg/20170817/f5a6df7d9c.svg" title="Account"></a></li>
+    <li><a href="blogposts"><img id="post" src="https://cdn4.iconfinder.com/data/icons/actions-2/24/pencil-square-512.png" title="Create Post"></a></li>
+  </div>
+  </div>
+</nav>
+<section id="line"></section>
+
+<div class="blog_container">
+<button id="open_button" class="open-button" onclick="openForm()">Create Post</button>
+<div class="form-popup" id="myForm">
+  <form class="" action="create_posts" method="post">
+    <input id="form_title" type="text" name="title" placeholder="Title..." required><br><br>
+    <input id="form_image" type="url" name="image_url" placeholder="Insert image url here..."><br><br>
+    <input id="form_content" type="text" name="content" placeholder="Write your post here..."><br><br>
+    <input id="form_submit" type="submit" value="Post">
+    <button id="close_button" type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+  </form>
+</div>
+</div>
+
+<div class="image_container">
+<button id="open_button" class="open-button" onclick="openImage()">Create Image</button>
+<div class="form-popup" id="imageForm">
+  <form class="" action="create_posts" method="post">
+    <input id="form_title" type="text" name="title" placeholder="Title..." required><br><br>
+    <input id="form_image" type="url" name="image_url" placeholder="Insert image url here..."><br><br>
+    <input id="form_submit" type="submit" value="Post">
+    <button id="close_button" type="button" class="btn cancel" onclick="closeImage()">Cancel</button>
+  </form>
+</div>
+</div>
+
+<div class="quote_container">
+<button id="open_button" class="open-button" onclick="openQuote()">Create Quote</button>
+<div class="form-popup" id="quoteForm">
+  <form class="" action="create_posts" method="post">
+    <input id="form_title" type="text" name="title" placeholder="Title..." required><br><br>
+    <input id="form_content" type="text" name="content" placeholder="Insert your Quote here..."><br><br>
+    <input id="form_submit" type="submit" value="Post">
+    <button id="close_button" type="button" class="btn cancel" onclick="closeQuote()">Cancel</button>
+  </form>
+</div>
+</div>
+
+<% @post.each do |p| %>
+<div class="container_posts">
+<form class="" action="deletepost" method="post">
+<p id="signature">Here's a blog: <%= session[:user].first_name %><%= session[:user].last_name %><button id="delete" type="button" name="button">DELETE</button></p>
+</form>
+<img id="image_url" src="<%= p.image_url%>" alt="">
+<p id="title"><%= p.title%></p>
+<p id="content"><%= p.content%></p>
+</div>
+<% end %>
