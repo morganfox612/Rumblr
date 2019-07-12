@@ -1,6 +1,5 @@
 require "sinatra"
 require "sinatra/activerecord"
-require "./mailer.rb"
 
 ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: "./database.sqlite3")
 
@@ -99,4 +98,8 @@ post "/deletepost" do
   delete_post = Post.find(params[:id])
   delete_post.destroy
   redirect "/blogposts"
+end
+
+get "/deleteuser" do
+  if session [1]
 end

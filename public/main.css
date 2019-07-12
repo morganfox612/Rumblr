@@ -267,22 +267,38 @@ label {
   background-color: whitesmoke;
 }
 
-#form_submit, #close_button, #open_button {
-  width: 70px;
-  height: 30px;
+#form_submit, #close_button, #post_button, #image_button, #quote_button{
+  width: 90px;
+  height: 50px;
   border-radius: 5px;
   border: 0px;
   text-align: center;
   font-weight: bold;
 }
 
-#close_button, #open_button {
+#close_button{
   margin-left: 2%;
   background-color: dodgerblue;
   color: white;
 }
 
-#open_button {
+#post_button {
   margin-top: .5%;
-  margin-left: 15%;
+  margin-left: 2%;
+  background-color: darkorange;
+  color: white;
+}
+
+#image_button {
+  margin-top: .5%;
+  margin-left: 13.5%;
+  background-color: indigo;
+  color: white;
+}
+
+#quote_button {
+  margin-top: .5%;
+  margin-left: 2%;
+  background-color: dodgerblue;
+  color: white;
 }

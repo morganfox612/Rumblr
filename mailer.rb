@@ -1,4 +1,3 @@
-require "action_mailer"
 
 ActionMailer::Base.view_paths = File.dirname(__FILE__)
 

@@ -16,8 +16,13 @@
 </nav>
 <section id="line"></section>
 
+<p>
+<button id="image_button" class="open-button" onclick="openImage()">Create Image</button>
+<button id="post_button" class="open-button" onclick="openForm()">Create Post</button>
+<button id="quote_button" class="open-button" onclick="openQuote()">Create Quote</button>
+</p>
+
 <div class="blog_container">
-<button id="open_button" class="open-button" onclick="openForm()">Create Post</button>
 <div class="form-popup" id="myForm">
   <form class="" action="create_posts" method="post">
     <input id="form_title" type="text" name="title" placeholder="Title..." required><br><br>
@@ -30,7 +35,6 @@
 </div>
 
 <div class="image_container">
-<button id="open_button" class="open-button" onclick="openImage()">Create Image</button>
 <div class="form-popup" id="imageForm">
   <form class="" action="create_posts" method="post">
     <input id="form_title" type="text" name="title" placeholder="Title..." required><br><br>
@@ -42,7 +46,6 @@
 </div>
 
 <div class="quote_container">
-<button id="open_button" class="open-button" onclick="openQuote()">Create Quote</button>
 <div class="form-popup" id="quoteForm">
   <form class="" action="create_posts" method="post">
     <input id="form_title" type="text" name="title" placeholder="Title..." required><br><br>
