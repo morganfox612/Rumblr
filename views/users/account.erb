@@ -43,6 +43,11 @@
   <p id="account_username"><%= session[:user].username %></p>
   <p id="break">  __________________________________________________________________________</p>
   </div>
+  <div id="delete_id">
+<form action="/deleteuser" method="post">
+<input id="delete" type="submit" value="Delete Account">
+</form>
+</div>
 
 
 </div>

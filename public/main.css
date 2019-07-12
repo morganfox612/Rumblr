@@ -54,7 +54,7 @@ nav li {
 }
 
 #pictures {
-  margin-left: 113%;
+  margin-left: 110%;
   display: grid;
   grid-template-columns: 30px 30px 30px 30px;
   grid-column-gap: 20%;
@@ -111,6 +111,12 @@ h2 {
   text-align: center;
   background-color: dodgerblue;
   color: white;
+  font-weight: bold;
+}
+
+#incorrect {
+  margin-left: 39.5%;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -259,7 +265,9 @@ label {
   width: 500px;
   background-color: whitesmoke;
 }
-
+#myForm, #imageForm, #quoteForm  {
+  display: none;
+}
 #form_content {
   padding-left: .2%;
   height: 150px;
@@ -301,4 +309,8 @@ label {
   margin-left: 2%;
   background-color: dodgerblue;
   color: white;
+}
+
+#delete {
+  text-align: center;
 }

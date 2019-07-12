@@ -77,7 +77,7 @@ end
 
 get "/blogposts" do
   if session[:user]
-    @post = Post.where(user_id: session[:user].id)
+    @post = Post.last(20)
   else
     redirect "/"
   end
@@ -94,6 +94,10 @@ get "/account" do
   erb :'users/account'
 end
 
+get "/deletepost" do
+  redirect "/blogposts"
+end
+
 post "/deletepost" do
   delete_post = Post.find(params[:id])
   delete_post.destroy
@@ -101,5 +105,17 @@ post "/deletepost" do
 end
 
 get "/deleteuser" do
-  if session [1]
+  redirect "/"
+end
+
+post "/deleteuser" do
+  @user = User.find(session[:user].id)
+  if @user
+    if (@user.id == session[:user].id)
+      @user = User.find(session[:user].id).destroy
+      @user.destroy
+      session[:user] = nil
+      redirect "/"
+    end
+  end
 end
