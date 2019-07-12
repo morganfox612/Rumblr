@@ -1,10 +1,16 @@
 require "sinatra"
 require "sinatra/activerecord"
 
-ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: "./database.sqlite3")
+# ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: "./database.sqlite3")
 #require 'active_record'
 #ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"])
 
+if ENV['RACK_ENV']
+  require "active_record"
+  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+else
+  set :database, {adapter: "sqlite3", database: "database.sqlite3"}
+end
 
 def subscribe_email(recipient)
   Newsletter.signup(recipient).deliver_now
